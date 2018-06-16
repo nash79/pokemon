@@ -5,6 +5,17 @@ class DBPokemon(object):
         self._connectionlogin=login
         self._connnectiondatabase=basename
 
+    def initdb(self):
+        fichier = open("script.sql", "r")
+        sql = fichier.read()
+        fichier.close()
+
+        cnx = mysql.connector.connect(user="root")
+        cursor = cnx.cursor()
+        cursor.execute(sql)
+        cursor.close()
+        cnx.close()
+
     def callfindalltype(self):
         cnx = mysql.connector.connect(user=self._connectionlogin, database=self._connnectiondatabase)
         cursor = cnx.cursor()

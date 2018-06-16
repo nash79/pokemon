@@ -45,7 +45,11 @@ def transferdatafromdatabase(dbp, lstType, lstPokemon):
             print('ERREUR REFERENCE caracteristique pokemon: ' + nom + ' -> ' + trans + ' -> ' + type1 + ' -> ' + type2)
 
 if __name__ == '__main__':
+
+
     dbp = DBPokemon("root", "pokemon")
+    dbp.initdb()
+
     v = ExtractWEB("datapokemon.html", "https://pokemondb.net/pokedex/all")
 
     lstType = v.extracttypefromhtml()

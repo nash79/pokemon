@@ -27,7 +27,6 @@ def pokemon_add(add: hug.types.text, response):
         return 'Donnee enregistré'
 
 
-
 @hug.put('/pokemon/{name}')
 def pokemon_update(name: hug.types.text, nouveaunom: hug.types.text, response):
     dbp = DBPokemon("root", "pokemon")
@@ -40,14 +39,11 @@ def pokemon_update(name: hug.types.text, nouveaunom: hug.types.text, response):
         return str('Donnee modifié')
 
 
-
 @hug.delete('/pokemon/{name}')
 def pokemon_delete(name: hug.types.text, response):
     dbp = DBPokemon("root", "pokemon")
     dbp.calldeletepokemon(name)
     response.status = HTTP_200
-
-
 
 
 @hug.get('/pokemon/{name}/features')
@@ -60,6 +56,7 @@ def pokemonlistcaracteristique(name: hug.types.text, response):
     else:
         response.status = HTTP_200
         return str(v)
+
 
 @hug.post('/pokemon/{name}/features')
 def pokemoncaracteristique_add(name: hug.types.text, transformation: hug.types.text, type1: hug.types.text, type2: hug.types.text, hp: hug.types.number, attack: hug.types.number, defense: hug.types.number, speedattack: hug.types.number, speeddefense: hug.types.number, speed: hug.types.number, response):
@@ -75,6 +72,7 @@ def pokemoncaracteristique_add(name: hug.types.text, transformation: hug.types.t
         response.status = HTTP_200
         return 'Donnee enregistré'
 
+
 @hug.put('/pokemon/{name}/features')
 def pokemoncaracteristique_update(name: hug.types.text, transformation: hug.types.text, type1: hug.types.text, type2: hug.types.text, hp: hug.types.number, attack: hug.types.number, defense: hug.types.number, speedattack: hug.types.number, speeddefense: hug.types.number, speed: hug.types.number, response):
     dbp = DBPokemon("root", "pokemon")
@@ -87,12 +85,13 @@ def pokemoncaracteristique_update(name: hug.types.text, transformation: hug.type
         return 'Donnee modifié'
 
 
-
 @hug.delete('/pokemon/{name}/features')
 def pokemoncaracteristique_delete(name: hug.types.text, transformation: hug.types.text, type1: hug.types.text, type2: hug.types.text, response):
     dbp = DBPokemon("root", "pokemon")
     dbp.calldeletefeature(name, transformation, type1, type2)
     response.status = HTTP_200
+
+
 
 
 @hug.get('/pokemon/type')
@@ -106,6 +105,7 @@ def listtype(response):
         response.status = HTTP_200
         return str(v)
 
+
 @hug.post('/pokemon/type')
 def type_add(addtypedesignation: hug.types.text, response):
     dbp = DBPokemon("root", "pokemon")
@@ -116,6 +116,7 @@ def type_add(addtypedesignation: hug.types.text, response):
     elif v == None:
         response.status = HTTP_200
         return 'Donnee enregistré'
+
 
 @hug.put('/pokemon/type/{designation}')
 def type_update(designation: hug.types.text, response):

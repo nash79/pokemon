@@ -1,0 +1,125 @@
+---
+'404': The API call you tried to make was not defined. Here's a definition of the
+  API to help you get going :)
+documentation:
+  handlers:
+    "/pokemon":
+      GET:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+      POST:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          add:
+            type: Basic text / string value
+    "/pokemon/{name}":
+      PUT:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          name:
+            type: Basic text / string value
+          nouveaunom:
+            type: Basic text / string value
+      DELETE:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          name:
+            type: Basic text / string value
+    "/pokemon/{name}/features":
+      GET:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          name:
+            type: Basic text / string value
+      POST:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          name:
+            type: Basic text / string value
+          transformation:
+            type: Basic text / string value
+          type1:
+            type: Basic text / string value
+          type2:
+            type: Basic text / string value
+          hp:
+            type: A Whole number
+          attack:
+            type: A Whole number
+          defense:
+            type: A Whole number
+          speedattack:
+            type: A Whole number
+          speeddefense:
+            type: A Whole number
+          speed:
+            type: A Whole number
+      PUT:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          name:
+            type: Basic text / string value
+          transformation:
+            type: Basic text / string value
+          type1:
+            type: Basic text / string value
+          type2:
+            type: Basic text / string value
+          hp:
+            type: A Whole number
+          attack:
+            type: A Whole number
+          defense:
+            type: A Whole number
+          speedattack:
+            type: A Whole number
+          speeddefense:
+            type: A Whole number
+          speed:
+            type: A Whole number
+      DELETE:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          name:
+            type: Basic text / string value
+          transformation:
+            type: Basic text / string value
+          type1:
+            type: Basic text / string value
+          type2:
+            type: Basic text / string value
+    "/pokemon/type":
+      GET:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+      POST:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          addtypedesignation:
+            type: Basic text / string value
+    "/pokemon/type/{designation}":
+      PUT:
+        outputs:
+          format: JSON (Javascript Serialized Object Notation)
+          content_type: application/json; charset=utf-8
+        inputs:
+          designation:
+            type: Basic text / string value
